@@ -18,11 +18,11 @@ boxes.forEach(e =>{
 function changeTurn(){
     if(turn === "X"){
         turn = "O";
-        document.querySelector(".bg").style.left = "85px";
+        document.querySelector(".background").style.left = "85px";
     }
     else{
         turn = "X";
-        document.querySelector(".bg").style.left = "0";
+        document.querySelector(".background").style.left = "0";
     }
 }
 
@@ -39,7 +39,7 @@ function cheakWin(){
 
         if(v0 != "" && v0 === v1 && v0 === v2){
             isGameOver = true;
-            document.querySelector("#results").innerHTML = turn + " win";
+            document.querySelector("#result").innerHTML = turn + " win";
             document.querySelector("#play-again").style.display = "inline"
 
             for(j = 0; j<3; j++){
@@ -59,7 +59,7 @@ function cheakDraw(){
 
         if(isDraw){
             isGameOver = true;
-            document.querySelector("#results").innerHTML = "Draw";
+            document.querySelector("#result").innerHTML = "Draw";
             document.querySelector("#play-again").style.display = "inline"
         }
     }
@@ -68,8 +68,8 @@ function cheakDraw(){
 document.querySelector("#play-again").addEventListener("click", ()=>{
     isGameOver = false;
     turn = "X";
-    document.querySelector(".bg").style.left = "0";
-    document.querySelector("#results").innerHTML = "";
+    document.querySelector(".background").style.left = "0";
+    document.querySelector("#result").innerHTML = "";
     document.querySelector("#play-again").style.display = "none";
 
     boxes.forEach(e =>{
